@@ -1,24 +1,18 @@
-# README
+# deej
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Patrick Killian Jackson
+##504184347
+![alt tag](https://raw.githubusercontent.com/scalableinternetservices/deej/master/photos/Killian_Jackson.jpg)
 
-Things you may want to cover:
+###David Scheibe
+##004124290
+![alt tag](https://raw.githubusercontent.com/scalableinternetservices/deej/master/photos/David_Scheibe.jpg)
 
-* Ruby version
+###Nathaniel Chu
+##304449551
+![alt tag](https://raw.githubusercontent.com/scalableinternetservices/deej/master/photos/Nathaniel_Chu.jpg)
 
-* System dependencies
+###Michael Chen
+##904295193
+![alt tag](https://raw.githubusercontent.com/scalableinternetservices/deej/master/photos/Michel_Chen.jpg)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
