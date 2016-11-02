@@ -1,1 +1,2 @@
 sudo yum install -y sqlite-devel
+sudo yum install imagemagick -y

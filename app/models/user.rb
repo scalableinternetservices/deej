@@ -25,6 +25,10 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  #avatar purposes
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   # Returns a random token.
   def self.new_token
     SecureRandom.urlsafe_base64
