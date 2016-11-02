@@ -17,8 +17,8 @@
     <ul class="tab">
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Playlists'), getPlaylist(document, 'script', 'deezer-widget-loader')">Playlists</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers</a></li>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers (<%= @user.followers.count %>)</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following (<%= @user.following.count %>)</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Microposts')">      
         <% if @user.microposts.any? %>Microposts (<%= @user.microposts.count %>)<% end %></a></li>
     </ul>
@@ -34,10 +34,22 @@
     <div id="Followers" class="tabcontent">
       <h3>Followers</h3>
       <p>Followers will appear here.</p>
+      <% if @followers.any? %>
+        <ul class="users follow">
+          <%= render @followers %>
+        </ul>
+        <%= will_paginate @followers%>
+      <% end %>
     </div>
     <div id="Following" class="tabcontent">
       <h3>Following</h3>
-      <p>Followers will appear here.</p>
+      <p>Following will appear here.</p>
+      <% if @following.any? %>
+        <ul class="users follow">
+          <%= render @following %>
+        </ul>
+        <%= will_paginate @following%>
+      <% end %>
     </div>
     <div id="Microposts" class="tabcontent">
       <% if @user.microposts.any? %>
