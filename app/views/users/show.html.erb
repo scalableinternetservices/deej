@@ -13,12 +13,40 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
+    <body>
+    <ul class="tab">
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Playlists')">Playlists</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Microposts')">      
+        <% if @user.microposts.any? %>Microposts (<%= @user.microposts.count %>)<% end %></a></li>
+    </ul>
+    <div id="Playlists" class="tabcontent">
+      <h3>Playlists</h3>
+      <p>Playlists will appear here.</p>
+    </div>
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>About will appear here.</p>
+    </div>
+    <div id="Followers" class="tabcontent">
+      <h3>Followers</h3>
+      <p>Followers will appear here.</p>
+    </div>
+    <div id="Following" class="tabcontent">
+      <h3>Following</h3>
+      <p>Followers will appear here.</p>
+    </div>
+    <div id="Microposts" class="tabcontent">
+      <% if @user.microposts.any? %>
+        <h3>Microposts (<%= @user.microposts.count %>)</h3>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
+        <%= will_paginate @microposts %>
+      <% end %>
+    </div>
+    </body>
   </div>
 </div>
