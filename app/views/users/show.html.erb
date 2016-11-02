@@ -15,7 +15,7 @@
     <%= render 'follow_form' if logged_in? %>
     <body>
     <ul class="tab">
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Playlists')">Playlists</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Playlists'), getPlaylist(document, 'script', 'deezer-widget-loader')">Playlists</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following</a></li>
@@ -25,6 +25,7 @@
     <div id="Playlists" class="tabcontent">
       <h3>Playlists</h3>
       <p>Playlists will appear here.</p>
+      <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=2403191086&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350"></div>
     </div>
     <div id="About" class="tabcontent">
       <h3>About</h3>
