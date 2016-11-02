@@ -6,6 +6,9 @@
     <div
       <span><%= link_to "Start sharing your own music!", current_user %></span>
     </div>
+    <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+    </section>
   </div>
 <% else %>
   <div class="center jumbotron">
