@@ -1,8 +1,19 @@
-<form method="GET">
-    <div class="form-group">
-      <label for="about">Edit your information!</br></label>
-      <textarea class="form-control" placeholder="Write about yourself!" 
-      			name="about" rows="40" cols="30"></textarea>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<h3>About</h3>
+<p>
+    Information about <%= @user.name %> appears here.<br>
+    <%= @user.about %>
+</p>
+<% if @current_user == @user %>
+    <%= form_for(@user) do |f| %>
+      <%= f.label :about %>
+      <%= f.text_area(:about, cols: 20, rows: 17) %>
+      <%= f.submit "Update Information", class: "btn btn-primary" %>
+    <% end %>
+    
+    
+    
+<% end %>
+
+
+
+

@@ -1,0 +1,8 @@
+<h3>Followers (<%= @user.followers.count %>)</h3>
+<p>DJ's following <%= @user.name %>!</p>
+<% if @followers.any? %>
+<ul class="users follow">
+  <%= render @followers %>
+</ul>
+<%= will_paginate @followers%>
+<% end %>
