@@ -21,7 +21,7 @@
     </ul>
     <div id="Playlists" class="tabcontent">
       <h3>Playlists</h3>
-      <p>Playlists will appear here.</p>
+      <p><%= @user.name %>'s favorite playlists!</p>
       <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=2403191086&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350"></div>
     </div>
     <div id="About" class="tabcontent">
@@ -29,8 +29,8 @@
       <p>About will appear here.</p>
     </div>
     <div id="Followers" class="tabcontent">
-      <h3>Followers</h3>
-      <p>Followers will appear here.</p>
+      <h3>Followers (<%= @user.followers.count %>)</h3>
+      <p>DJ's following <%= @user.name %>!</p>
       <% if @followers.any? %>
         <ul class="users follow">
           <%= render @followers %>
@@ -39,8 +39,8 @@
       <% end %>
     </div>
     <div id="Following" class="tabcontent">
-      <h3>Following</h3>
-      <p>Following will appear here.</p>
+      <h3>Following (<%= @user.following.count %>)</h3>
+      <p>DJ's <%= @user.name %> is currently following!</p>
       <% if @following.any? %>
         <ul class="users follow">
           <%= render @following %>
@@ -51,6 +51,7 @@
     <div id="Microposts" class="tabcontent">
       <% if @user.microposts.any? %>
         <h3>Comments (<%= @user.microposts.count %>)</h3>
+        <p>Comment about this DJ!</p>
         <ol class="microposts">
           <%= render @microposts %>
         </ol>
