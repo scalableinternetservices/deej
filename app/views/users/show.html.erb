@@ -26,7 +26,10 @@
     </div>
     <div id="About" class="tabcontent">
       <h3>About</h3>
-      <p>About will appear here.</p>
+      <p>Information about <%= @user.name %> appears here.</p>
+      <% if @current_user == @user %>
+        <%= render 'about' %>
+      <% end %>
     </div>
     <div id="Followers" class="tabcontent">
       <h3>Followers (<%= @user.followers.count %>)</h3>
