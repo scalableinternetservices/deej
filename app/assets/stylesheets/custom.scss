@@ -248,6 +248,11 @@ input {
   }
 }
 
+.user_block {
+  border: 1px solid $gray-lighter;
+  background-color: #f1f1f1;
+}
+
 /* microposts */
 
 .microposts {
