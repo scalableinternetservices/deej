@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @following = @user.following.paginate(page: params[:page])
     @followers = @user.followers.paginate(page: params[:page])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost  = current_user.microposts.build
   end
 
   def new
