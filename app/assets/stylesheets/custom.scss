@@ -297,6 +297,10 @@ span.picture {
 
 /* tabs */
 body {font-family: "Lato", sans-serif;}
+.tabs {
+  background-color: #f1f1f1;
+
+}
 
 ul.tab {
     list-style-type: none;
@@ -337,4 +341,5 @@ ul.tab li a:focus, .active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background-color: #f1f1f1;
 }
