@@ -1,8 +1,8 @@
-<% if @user.microposts.any? %>
-<h3>Comments (<%= @user.microposts.count %>)</h3>
+<% if @comments.any? %>
+<h3>Comments (<%= @comments.count %>)</h3>
 <p>Comment about this DJ!</p>
 <ol class="microposts">
-  <%= render @microposts %>
+  <%= render @comments %>
 </ol>
-<%= will_paginate @microposts %>
+<%= will_paginate @comments %>
 <% end %>

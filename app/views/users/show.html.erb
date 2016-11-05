@@ -16,7 +16,7 @@
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers (<%= @user.followers.count %>)</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following (<%= @user.following.count %>)</a></li>
-      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Microposts')">Comments (<%= @user.microposts.count %>)</a></li>
+      <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Microposts')">Comments (<%= @comments.count %>)</a></li>
     </ul>
     <div id="Playlists" class="tabcontent">
       <%= render 'playlists' %>

@@ -61,6 +61,10 @@ class User < ApplicationRecord
                      OR user_id = :user_id", user_id: id)
   end
 
+  def comments
+    Micropost.where("receiver_id = :user_id", user_id: id)
+  end
+
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
