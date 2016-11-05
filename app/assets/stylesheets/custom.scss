@@ -348,3 +348,32 @@ ul.tab li a:focus, .active {
     border-top: none;
     background-color: #f1f1f1;
 }
+
+/* Style the home page buttons */
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 15px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none
+}
+
+section.border button {
+  color: #6496c8;
+  background: rgba(0,0,0,0);
+  border: solid 5px #6496c8;
+}
+
+section.border button:hover,
+section.border button.hover {
+  border-color: #346392;
+  color: #346392;
+}
