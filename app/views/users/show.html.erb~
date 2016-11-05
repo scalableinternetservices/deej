@@ -2,8 +2,8 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
-      <h1 style="color:white;">
-        <%= image_tag @user.avatar.url(:medium) , :class=> "img-circular"  %>
+      <h1>
+        <%= image_tag @user.avatar.url(:medium) %>
         <%= @user.name %>
       </h1>
     </section>
