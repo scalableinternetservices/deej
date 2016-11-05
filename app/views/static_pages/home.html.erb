@@ -1,14 +1,10 @@
 <div class="center jumbotron">
   <h1>Welcome to deej</h1>
   <% if logged_in? %>
-    <div class="row">
-      <div
-        <span><%= link_to "View active DJ's", users_path %></span>
-      </div>
-      <div
-        <span><%= link_to "Start sharing your own music!", current_user %></span>
-      </div>
-    </div>
+    <section class="border">
+        <a href=/users style='text-decoration:none;'><button >View active DJ's</button></a>
+        <button ><%= link_to "Start sharing your own music!", current_user, {:style =>'text-decoration:none;'} %></button >
+    </section>
   <% else %>
   <h2>
     Please log in to begin listening to personalized DJ sets from all over!
@@ -16,3 +12,4 @@
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   <% end %>
 </div>
+
