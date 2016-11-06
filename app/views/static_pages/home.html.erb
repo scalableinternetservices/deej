@@ -2,8 +2,9 @@
   <h1>Welcome to deej</h1>
   <% if logged_in? %>
     <section class="border">
-        <a href=/users style='text-decoration:none;'><button >View active DJ's</button></a>
-        <button ><%= link_to "Start sharing your own music!", current_user, {:style =>'text-decoration:none;'} %></button >
+        <%= button_to "View active DJ's", users_path, { :class => "buttonTo", :method => :get } %>
+        <br>
+        <%= button_to "Start sharing your own music!", current_user, { :class => "buttonTo", :method => :get } %>
     </section>
   <% else %>
   <h2>

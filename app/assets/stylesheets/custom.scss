@@ -351,8 +351,8 @@ ul.tab li a:focus, .active {
     background-color: #f1f1f1;
 }
 
-/* Style the home page buttons */
-button {
+/* Style buttons */
+.buttonTo {
   display: inline-block;
   margin: 0 10px 0 0;
   padding: 15px 45px;
@@ -361,21 +361,22 @@ button {
   line-height: 1.8;
   appearance: none;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 0;  
 }
 
-button:focus {
+.buttonTo:focus {
   outline: none
 }
 
-section.border button {
+section.border .buttonTo {
   color: #6496c8;
   background: rgba(0,0,0,0);
   border: solid 5px #6496c8;
+  width: 300px;
 }
 
-section.border button:hover,
-section.border button.hover {
-  border-color: #346392;
-  color: #346392;
+section.flat .buttonTo:hover,
+section.flat .buttonTo.hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
 }
