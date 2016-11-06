@@ -11,7 +11,7 @@
 
 body {
   padding-top: 60px;
-  background-image: url(<%= asset_path 'concert.jpg' %>) no-repeat center center fixed; 
+  background-image: image-url("concert.jpg") returns url(/assets/images/concert.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
