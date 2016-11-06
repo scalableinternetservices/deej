@@ -10,7 +10,7 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <body>
+    <body style="background: url(/assets/concert.jpg) no-repeat center center fixed;">
     <ul class="tab">
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Playlists'), getPlaylist(document, 'script', 'deezer-widget-loader')">Playlists</a></li>
       <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
