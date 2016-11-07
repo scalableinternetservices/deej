@@ -7,6 +7,12 @@
   box-sizing:         border-box;
 }
 
+.jumbotron {
+  border: 1px solid $gray-lighter;
+  background-color: #f1f1f1;
+  opacity: 0.95;
+}
+
 /* universal */
 
 body {
@@ -74,7 +80,7 @@ p {
   font-weight: bold;
 }
 
-#logo:hover {
+#logo:buttonTo {
   color: #fff;
   text-decoration: none;
 }
@@ -92,7 +98,7 @@ footer a {
   color: #555;
 }
 
-footer a:hover {
+footer a:buttonTo {
   color: #222;
 }
 
@@ -171,7 +177,7 @@ aside {
       padding-left: 0;
       border: 0;
     }
-    &:hover {
+    &:buttonTo {
       text-decoration: none;
       color: blue;
     }
@@ -364,8 +370,8 @@ ul.tab li a {
     font-size: 17px;
 }
 
-/* Change background color of links on hover */
-ul.tab li a:hover {
+/* Change background color of links on buttonTo */
+ul.tab li a:buttonTo {
     background-color: #ddd;
 }
 
@@ -395,10 +401,11 @@ ul.tab li a:focus, .active {
   box-shadow: none;
   border-radius: 0;  
 }
-
+/*
 .buttonTo:focus {
   outline: none
 }
+*/
 
 section.border .buttonTo {
   color: #6496c8;
@@ -407,8 +414,8 @@ section.border .buttonTo {
   width: 300px;
 }
 
-section.flat .buttonTo:hover,
-section.flat .buttonTo.hover {
-  background-color: #346392;
-  text-shadow: -1px 1px #27496d;
+section.border .buttonTo:hover {
+  border-color: #346392;
+  color: #346392;
+  background-color: white;
 }
