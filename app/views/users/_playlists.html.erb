@@ -8,6 +8,17 @@
 	<button onClick="getSong();">Search Deezer</button>
 </div>
 
+<table>
+	<thead>
+		<tr>
+			<th>Song Title</th>
+			<th>Artist Name</th>
+		</tr>
+	</thead>
+	<tbody id="songs">
+	</tbody>
+</table>
+
 <script>
 
 function getSong() {
@@ -19,9 +30,16 @@ function getSong() {
     type: 'GET',
     success: function (data) {
         console.log(data);
-        //displaySearchResults(data);
+        listSongs(data);
     }
 	});
+
+function listSongs(data) {
+	$('#songs').empty();
+	for (var i = 0; i < data.data.length; i++) {
+		$('#songs').append("<tr song_id=" + data.data[i].id + "><td>" + data.data[i].title + "</td><td>" + data.data[i].artist.name + "</td></tr>");
+	}
+}
 
 }
 
