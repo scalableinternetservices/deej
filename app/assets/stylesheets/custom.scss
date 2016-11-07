@@ -241,7 +241,7 @@ input {
 /* Users index */
 
 .users {
-  list-style: none;
+  list-style: square outside none;
   margin: 0;
   li {
     overflow: auto;
@@ -250,11 +250,43 @@ input {
   }
 }
 
-.user_block {
-  border: 1px solid $gray-lighter;
+.user_image_name_about {
+  overflow: hidden;
+  position: relative;
+  line-height: 1em;
+  max-height: 4.4em;
+  text-align: justify;  
+  margin-right: 5em;
+  padding-right: 1em;
+}
+
+.user_image_name_about:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.user_image_name_about:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 5em;
+  height: 5em;
+  margin-top: 0.2em;
   background-color: #f1f1f1;
 }
 
+.user_block {
+  border: 1px solid $gray-lighter;
+  background-color: #f1f1f1;
+  opacity: 0.95;
+}
+
+.user_list {
+  display: block;
+
+}
 /* microposts */
 
 .microposts {

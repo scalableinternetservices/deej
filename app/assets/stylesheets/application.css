@@ -43,4 +43,6 @@
  border-radius: 100px;
  -webkit-border-radius: 100px;
  -moz-border-radius: 100px;
+ float: left;
+ margin: 5px;
 }

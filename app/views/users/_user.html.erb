@@ -1,8 +1,12 @@
-<li>
-  <%= image_tag user.avatar.url(:medium), :class=>"img-circular-list" %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
+<li class="user_list">
+<section class="user_image_name_about">
+	<%= image_tag user.avatar.url(:medium), :class=>"img-circular-list" %>
+	<%= link_to user.name, user %>
+	<br>
+	<p> <%= user.about %> </p>
+	<% if current_user.admin? && !current_user?(user) %>
+	  | <%= link_to "delete", user, method: :delete,
+	                                data: { confirm: "You sure?" } %>
+	<% end %>
+</section>
 </li>
