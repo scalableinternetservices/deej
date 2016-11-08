@@ -25,3 +25,25 @@ function getPlaylist(d, s, id) {
 	js.src = "https://cdns-files.dzcdn.net/js/widget/loader.js"; 
 	 djs.parentNode.insertBefore(js, djs);
 }
+
+function getSong() {
+	var song = $('#deezer-search').val();
+
+	$.ajax({
+    url: "https://api.deezer.com/search?q=" + song + "&output=jsonp" + "&callback=?",
+    dataType: 'jsonp',
+    type: 'GET',
+    success: function (data) {
+        console.log(data);
+        listSongs(data);
+    }
+	});
+
+}
+
+function listSongs(data) {
+	$('#songs').empty();
+	for (var i = 0; i < data.data.length; i++) {
+		$('#songs').append("<tr song_id=" + data.data[i].id + "><td>" + data.data[i].title + "</td><td>" + data.data[i].artist.name + "</td></tr>");
+	}
+}
