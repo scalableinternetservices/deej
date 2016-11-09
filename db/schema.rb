@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103203711) do
+ActiveRecord::Schema.define(version: 20161109231353) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20161103203711) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
+  create_table "playlists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -30,6 +36,18 @@ ActiveRecord::Schema.define(version: 20161103203711) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.string   "url"
+    t.string   "album"
+    t.string   "cover_art_url"
+    t.integer  "deezer_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
