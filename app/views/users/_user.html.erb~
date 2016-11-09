@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <li class="user_list">
 <section class="user_image_name_about">
 	<%= image_tag user.avatar.url(:medium), :class=>"img-circular-list" %>
@@ -10,3 +11,13 @@
 	<% end %>
 </section>
 </li>
+=======
+<li>
+  <%= image_tag user.avatar.url(:medium) %>
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
+>>>>>>> userPlaylist
