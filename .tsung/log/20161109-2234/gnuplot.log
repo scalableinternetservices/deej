@@ -1,0 +1,384 @@
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [128.938:128.938], adjusting to [127.649:130.227]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [7.68506:7.68506], adjusting to [7.60821:7.76191]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [128.938:128.938], adjusting to [127.649:130.227]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [7.68506:7.68506], adjusting to [7.60821:7.76191]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " HTTP Code Response rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " total", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [10:10], adjusting to [9.9:10.1]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " HTTP Code Response rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " total", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [10:10], adjusting to [9.9:10.1]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Request and tcp/udp connection rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Mean request (and connection) duration", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Request and tcp/udp connection rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Mean request (and connection) duration", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Transaction and page rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Mean transaction and page duration", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [125.267:125.267], adjusting to [124.014:126.52]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [5.78906:5.78906], adjusting to [5.73117:5.84695]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Transaction and page rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Mean transaction and page duration", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [125.267:125.267], adjusting to [124.014:126.52]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [5.78906:5.78906], adjusting to [5.73117:5.84695]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Simultaneous users and opened TCP/UDP connections", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " maximum_simultaneous", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Simultaneous users and opened TCP/UDP connections", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " maximum_simultaneous", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Users arrival/departure rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Total users", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [10:10], adjusting to [9.9:10.1]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Users arrival/departure rate", offset at ((character units) 0, 0, 0)
+
+
+	title is " Total users", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [10:10], adjusting to [9.9:10.1]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Network throughput", offset at ((character units) 0, 0, 0)
+
+
+	title is " Total send/receive bytes", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " Network throughput", offset at ((character units) 0, 0, 0)
+
+
+	title is " Total send/receive bytes", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.115266:0.115266], adjusting to [0.114114:0.116419]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.115266:0.115266], adjusting to [0.114114:0.116419]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [3162.91:3162.91], adjusting to [3131.28:3194.54]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [3162.91:3162.91], adjusting to [3131.28:3194.54]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.0117188:0.0117188], adjusting to [0.0116016:0.0118359]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty y range [0.0117188:0.0117188], adjusting to [0.0116016:0.0118359]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [79:79], adjusting to [78.21:79.79]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
+Could not find/open font when opening font "arial", using internal non-scalable font
+
+	title is " rate", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0.25:0.25], adjusting to [0.2475:0.2525]
+
+	title is " mean", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
+
+	title is " stddev", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [0:0], adjusting to [-1:1]
+
+	title is " max_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
+
+	title is " min_sample", offset at ((character units) 0, 0, 0)
+
+Warning: empty x range [4:4], adjusting to [3.96:4.04]
+Warning: empty y range [98:98], adjusting to [97.02:98.98]
