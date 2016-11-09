@@ -1,21 +1,4 @@
 <h3>Playlists</h3>
 <p><%= @user.name %>'s favorite playlists!</p>
-<!--<div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=2403191086&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350">
-</div>-->
-
-<div>
-	<input type="search" id="deezer-search">
-	<button onClick="getSong();">Search Deezer</button>
+<div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=2403191086&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350">
 </div>
-
-<table>
-	<thead>
-		<tr>
-			<th>Song Title</th>
-			<th>Artist Name</th>
-		</tr>
-	</thead>
-	<tbody id="songs">
-	</tbody>
-</table>
-
