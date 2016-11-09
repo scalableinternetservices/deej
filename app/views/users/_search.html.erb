@@ -1,3 +1,4 @@
+<% if @current_user == @user %>
 <div>
 	<input type="search" id="deezer-search">
 	<button onClick="getSong();">Search Deezer</button>
@@ -39,3 +40,6 @@ function listSongs(data) {
 }
 
 </script>
+<% else %>
+<h3>You can only add songs to your own playlist!</h3>
+<% end %>
