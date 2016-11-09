@@ -1,4 +1,27 @@
 <h3>Playlists</h3>
 <p><%= @user.name %>'s favorite playlists!</p>
-<div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=2403191086&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350">
-</div>
+
+<div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="90"></div>
+<body onload="listPlaylist()">
+<table>
+       <thead>
+               <tr>
+                       <th>Song Title</th>
+                       <th>Artist Name</th>
+               </tr>
+       </thead>
+       <tbody id="playlist">
+       </tbody>
+</table>
+</body>
+
+<script>
+
+function listPlaylist() {
+       $('#playlist').empty();
+       for (var i = 0; i < 5; i++) {
+               $('#playlist').append("<tr song_id=" + i + "><td>" + "Song Name " + i + "</td><td>" +  "Artist Name " + i + "</td><td><button class='add-button'><span>Play</span></button></td></tr>");
+       }
+}
+
+</script>
