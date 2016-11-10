@@ -5,7 +5,6 @@ class CreateSongs < ActiveRecord::Migration[5.0]
     	t.string :artist
     	t.string :url
     	t.string :album
-    	t.string :cover_art_url
     	t.integer :deezer_id
     	t.integer :playlist_id
       t.timestamps

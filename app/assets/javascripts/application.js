@@ -38,12 +38,21 @@ function getSong() {
         listSongs(data);
     }
 	});
-
 }
 
 function listSongs(data) {
     $('#songs').empty();
     for (var i = 0; i < data.data.length; i++) {
-        $('#songs').append("<tr song_id=" + data.data[i].id + "><td>" + data.data[i].title + "</td><td>" + data.data[i].artist.name + "</td><td><button class='add-button'><span>Add</span></button></td></tr>");
+        var deezer_id = data.data[i].id;
+        var title = data.data[i].title;
+        var artist = data.data[i].artist.name;
+        var album = data.data[i].album.title;
+        $('#songs').append("<tr song_id=" + deezer_id + "><td>" + title + "</td><td>" + artist + "</td><td><button class='add-button' onClick='addSong(deezer_id, title, artist, album)'><span>Add</span></button></td></tr>");
     }
 }
+
+function addSong(deezer_id, title, artist, album){
+    
+    
+}
+
