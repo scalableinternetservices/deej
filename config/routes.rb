@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  get '/playlists/:pid/add_song/:sid/:title', to: 'playlists#add_song'
+
   resources :users
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
