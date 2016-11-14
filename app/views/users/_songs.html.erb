@@ -1,23 +1,8 @@
-<h3>Playlists</h3>
-<p><%= @user.name %>'s favorite songs!</p>
-
-<div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="90"></div>
-
+<% if @songs.any? %>
+<h3>Comments (<%= @songs.count %>)</h3>
+<p>Comment about this DJ!</p>
 <ol class="microposts">
-  <%= render @comments %>
+  <%= render @songs %>
 </ol>
-
-<body>
-<table>
-       <thead>
-               <tr>
-                       <th>Song Title</th>
-                       <th>Artist Name</th>
-                       <th>Album Name</th>
-               </tr>
-       </thead>
-       <tbody id="playlist">
-       </tbody>
-</table>
-
-</body>
+<%= will_paginate @songs %>
+<% end %>

@@ -64,6 +64,16 @@ class User < ApplicationRecord
   def comments
     Micropost.where("receiver_id = :user_id", user_id: id)
   end
+  
+  def songs(user_id)
+    print "test5\n"
+    @user = user_id
+    if @user.songs.empty?
+          print "DONE\n"
+    end
+    Micropost.where("receiver_id = :user_id", user_id: id)
+  end
+  
 
   # Follows a user.
   def follow(other_user)
