@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :playlists, dependent: :destroy
+  has_and_belongs_to_many :songs
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
@@ -52,7 +52,6 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
-
 
   # Returns a user's status feed.
   def feed

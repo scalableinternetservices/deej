@@ -18,14 +18,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function getPlaylist(d, s, id) { 
-	var js, djs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return; 
-	js = d.createElement(s); js.id = id; 
-	js.src = "https://cdns-files.dzcdn.net/js/widget/loader.js"; 
-	djs.parentNode.insertBefore(js, djs);
-}
-
 function getSong() {
 	var song = $('#deezer-search').val();
 
@@ -47,21 +39,21 @@ function listSongs(data) {
         var title = data.data[i].title;
         var artist = data.data[i].artist.name;
         var album = data.data[i].album.title;
-        $('#songs').append("<tr song_id=" + deezer_id + "><td>" + title + "</td><td>" + artist + "</td><td>" + album + "</td><td><button class='add-button' onClick='addSong(this)'><span>Add</span></button></td></tr>");
+        $('#songs').append("<tr deezer_id=" + deezer_id + " title=" + title + " artist=" + artist + " album=" + album +"><td>" + title + "</td><td>" + artist + "</td><td>" + album + "</td><td><button class='add-button' onClick='addSongToUser(this);'><span>Add</span></button></td></tr>");
     }
 }
 
-function addSong(song_element){
-    var song = song_element.parent().parent();
-    var song_id = song.attr('song_id');
-    var song_artist = song.attr('artist');
+function addSongToUser(song_element){
+    var song = $(song_element).parent().parent()
+    var song_did = song.attr('deezer_id');
     var song_title = song.attr('title');
+    var song_artist = song.attr('artist');
     var song_album = song.attr('album');
-
-    $.get(
-        
-
-
-    )
+    $.get("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
 }
 
+function getUserId(){
+    var path = window.location.pathname;
+    var uid = path.split('/')[2];
+    return uid;
+}

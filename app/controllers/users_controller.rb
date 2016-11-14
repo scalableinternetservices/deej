@@ -12,13 +12,60 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @following = @user.following.paginate(page: params[:page])
     @followers = @user.followers.paginate(page: params[:page])
-    @microposts = @user.microposts.paginate(page: params[:page])
     @micropost  = current_user.microposts.build
     @comments = @user.comments.paginate(page: params[:page])
+    @songs = @user.songs.where("user_id = :users_id", users_id: @user.id)
   end
 
   def new
     @user = User.new
+  end
+
+  def add_song
+    deezer_id = params[:did]
+    user_id = params[:uid]
+    title = params[:title]
+    artist_name = params[:artist]
+    album_name = params[:album]
+    #json_response = deezer_song(song_id)    
+    @user = User.find(user_id)
+    if (@song = Song.find_by(deezer_id: deezer_id))
+      print "Found song"
+      @user.songs << @song
+      print "Found song and added user song relation"
+    else
+      print "No song found"
+      @song = Song.create(title: title, artist: artist_name, album: album_name, deezer_id: deezer_id)
+      print "Song created"
+      @user.songs << @song
+      print "Song created and added to user's songs"
+    end
+
+=begin
+    if (user.playlist.nil?)
+      print "User playlist empty"
+      playlist = user.create_playlist()
+        if (song = Song.find_by(deezer_id: song_id))
+          print "user playlist empty, found song"
+          psong = Psong.create(playlist_id: playlist.id, song_id: song.id)
+        else
+          print "user playlist empty, creating song"
+          song = playlist.songs.create(title: json_response['title'], artist: json_response['contributors'].first['name'], album: json_response['album']['title'], deezer_id: song_id)
+          print "user playlist empty, creating song = SUCCESS"
+        end
+    else
+      playlist = user.playlist
+      print "loaded user playlist"
+        if (song = Song.find_by(deezer_id: song_id))
+          print "loaded user playlist, found song"
+          psong = Psong.create(playlist_id: playlist.id, song_id: song.id)
+        else
+          print "loaded user playlist, creating song"
+          song = playlist.songs.create(title: json_response['title'], artist: json_response['contributors'].first['name'], album: json_response['album']['title'], deezer_id: song_id)          
+          print "loaded user playlist, creating song = SUCCESS"
+        end
+    end
+=end
   end
 
   def create
@@ -53,6 +100,13 @@ class UsersController < ApplicationController
   end
   
   private
+
+    def deezer_song(id)
+      url = "http://api.deezer.com/track/#{id}&output=json"
+      uri = URI(url)
+      response = Net::HTTP.get(uri)
+      return JSON.parse(response, symbolize_keys: true)
+    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :about,

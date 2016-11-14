@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :playlists
   root   'static_pages#home'
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  get '/playlists/:pid/add_song/:sid/:title', to: 'playlists#add_song'
+  get '/users/:uid/add_song/:did/:title/:artist/:album', to: 'users#add_song'
 
   resources :users
   resources :microposts,          only: [:create, :destroy]

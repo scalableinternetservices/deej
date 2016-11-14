@@ -1,7 +1,12 @@
 <h3>Playlists</h3>
-<p><%= @user.name %>'s favorite playlists!</p>
+<p><%= @user.name %>'s favorite songs!</p>
 
 <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="90"></div>
+
+<ol class="microposts">
+  <%= render @comments %>
+</ol>
+
 <body>
 <table>
        <thead>
