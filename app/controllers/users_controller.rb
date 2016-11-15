@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @followers = @user.followers.paginate(page: params[:page])
     @micropost  = current_user.microposts.build
     @comments = @user.comments.paginate(page: params[:page])
-    @songs = @user.songs(@user)
+    @songs = Song.all
   end
 
   def new

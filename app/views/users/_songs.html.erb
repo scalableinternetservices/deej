@@ -1,8 +1,5 @@
-<% if @songs.any? %>
-<h3>Comments (<%= @songs.count %>)</h3>
-<p>Comment about this DJ!</p>
-<ol class="microposts">
+<h3>Songs</h3>
+<p>This DJ's favorite songs!</p>
+<ol>
   <%= render @songs %>
 </ol>
-<%= will_paginate @songs %>
-<% end %>
