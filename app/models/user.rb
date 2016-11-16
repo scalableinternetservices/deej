@@ -64,15 +64,15 @@ class User < ApplicationRecord
   def comments
     Micropost.where("receiver_id = :user_id", user_id: id)
   end
-  
-  def songs
-    Song.find(1)
-  end
-  
 
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
+  end
+
+  def display_songs(ids)
+    Song.find(ids)
+    #Song.all
   end
 
   # Unfollows a user.

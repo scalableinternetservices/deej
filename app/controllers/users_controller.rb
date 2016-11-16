@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     @followers = @user.followers.paginate(page: params[:page])
     @micropost  = current_user.microposts.build
     @comments = @user.comments.paginate(page: params[:page])
-    @songs = Song.all
+    ids = @user.song_ids
+    @songs = @user.display_songs(ids)
   end
 
   def new
@@ -26,8 +27,7 @@ class UsersController < ApplicationController
     user_id = params[:uid]
     title = params[:title]
     artist_name = params[:artist]
-    album_name = params[:album]
-    #json_response = deezer_song(song_id)    
+    album_name = params[:album]   
     @user = User.find(user_id)
     if (@song = Song.find_by(deezer_id: deezer_id))
       print "Found song"
@@ -40,32 +40,14 @@ class UsersController < ApplicationController
       @user.songs << @song
       print "Song created and added to user's songs"
     end
+  end
 
-=begin
-    if (user.playlist.nil?)
-      print "User playlist empty"
-      playlist = user.create_playlist()
-        if (song = Song.find_by(deezer_id: song_id))
-          print "user playlist empty, found song"
-          psong = Psong.create(playlist_id: playlist.id, song_id: song.id)
-        else
-          print "user playlist empty, creating song"
-          song = playlist.songs.create(title: json_response['title'], artist: json_response['contributors'].first['name'], album: json_response['album']['title'], deezer_id: song_id)
-          print "user playlist empty, creating song = SUCCESS"
-        end
-    else
-      playlist = user.playlist
-      print "loaded user playlist"
-        if (song = Song.find_by(deezer_id: song_id))
-          print "loaded user playlist, found song"
-          psong = Psong.create(playlist_id: playlist.id, song_id: song.id)
-        else
-          print "loaded user playlist, creating song"
-          song = playlist.songs.create(title: json_response['title'], artist: json_response['contributors'].first['name'], album: json_response['album']['title'], deezer_id: song_id)          
-          print "loaded user playlist, creating song = SUCCESS"
-        end
-    end
-=end
+  def remove_song
+    song_id = params[:sid]
+    user_id = params[:uid]
+    @user = User.find(user_id)
+    @song = Song.find(song_id)
+    @user.songs.destroy(@song)
   end
 
   def create

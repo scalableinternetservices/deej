@@ -52,6 +52,14 @@ function addSongToUser(song_element){
     $.get("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
 }
 
+function playSong(deezer_id){
+
+}
+
+function removeSong(song_id, user_id){
+    $.get("/users/" + song_id + "/" + user_id)
+}
+
 function getUserId(){
     var path = window.location.pathname;
     var uid = path.split('/')[2];

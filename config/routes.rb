@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   get '/users/:uid/add_song/:did/:title/:artist/:album', to: 'users#add_song'
+  get '/users/:sid/:uid', to: 'users#remove_song'
 
   resources :users
   resources :microposts,          only: [:create, :destroy]
