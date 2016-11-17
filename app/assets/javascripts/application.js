@@ -57,7 +57,7 @@ function playSong(deezer_id){
 }
 
 function removeSong(song_id, user_id){
-    $.get("/users/" + song_id + "/" + user_id)
+    $.get("/users/" + song_id + "/" + user_id);
 }
 
 function getUserId(){
