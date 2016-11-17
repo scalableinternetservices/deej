@@ -12,20 +12,20 @@
     <%= render 'follow_form' if logged_in? %>
     <body>
       <ul class="tab" id="profileTab">
-        <li><a href="#1">Search</a></li>
-        <li><a href="#2">Songs</a></li>
-        <li><a href="#3">About</a></li>
-        <li><a href="#4">Followers (<%= @user.followers.count %>)</a></li>
-        <li><a href="#5">Following (<%= @user.following.count %>)</a></li>
-        <li><a href="#6">Comments (<%= @comments.count %>)</a></li>
+        <li><a href="#Search">Search</a></li>
+        <li><a href="#Songs">Songs</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Followers">Followers (<%= @user.followers.count %>)</a></li>
+        <li><a href="#Following">Following (<%= @user.following.count %>)</a></li>
+        <li><a href="#Microposts">Comments (<%= @comments.count %>)</a></li>
       </ul>
       <div class="tab-content">
-         <div class="tab-pane" id="1"><%=render 'search'%></div>
-         <div class="tab-pane" id="2"><%=render 'songs'%></div>
-         <div class="tab-pane" id="3"><%=render 'about'%></div>
-         <div class="tab-pane" id="4"><%=render 'followers'%></div>
-         <div class="tab-pane" id="5"><%=render 'following'%></div>
-         <div class="tab-pane" id="6"><%=render 'microposts'%></div>
+         <div class="tab-pane" id="Search"><%=render 'search'%></div>
+         <div class="tab-pane" id="Songs"><%=render 'songs'%></div>
+         <div class="tab-pane" id="About"><%=render 'about'%></div>
+         <div class="tab-pane" id="Followers"><%=render 'followers'%></div>
+         <div class="tab-pane" id="Following"><%=render 'following'%></div>
+         <div class="tab-pane" id="Microposts"><%=render 'microposts'%></div>
       </div>
     </body>
   </div>
@@ -53,5 +53,5 @@ $("ul.tab > li > a").on("shown.bs.tab", function(e) {
 
 // on load of the page: switch to the currently selected tab
 var hash = window.location.hash;
-$('#profileTab a[href="' + hash + '"]').tab('show');
+if (hash) $('#profileTab a[href="' + hash + '"]').tab('show');
 </script>
