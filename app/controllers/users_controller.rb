@@ -46,7 +46,6 @@ class UsersController < ApplicationController
     user_id = params[:uid]
     deezer_id = params[:did]
     @user = User.find(user_id)
-    #@user.current_song_id = deezer_id
     @user.update_attribute(:current_song_id, deezer_id)
   end
 
