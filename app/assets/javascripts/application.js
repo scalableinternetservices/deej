@@ -4,20 +4,6 @@
 //= require turbolinks
 //= require_tree .
 
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
 function getSong() {
 	var song = $('#deezer-search').val();
 
@@ -50,14 +36,17 @@ function addSongToUser(song_element){
     var song_artist = song.attr('artist');
     var song_album = song.attr('album');
     $.get("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
+    window.location.reload(true);
 }
 
 function playSong(deezer_id){
     $.get("/users/" + getUserId() + "/set_song/" + deezer_id);
+    window.location.reload(true);
 }
 
 function removeSong(song_id, user_id){
     $.get("/users/" + song_id + "/" + user_id);
+    window.location.reload(true);
 }
 
 function getUserId(){

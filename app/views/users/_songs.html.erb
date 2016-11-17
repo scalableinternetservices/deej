@@ -1,5 +1,5 @@
+<button id="connectDeezer" style="width:150px; border-radius:10px;background-color:#6496c8;">Connect Deezer</button>
 <h3>Songs</h3>
-<p><%= @user.name %>'s favorite songs!</p>
 
 <script>
 	(function(d, s, id) { 
@@ -11,7 +11,7 @@
 }(document, "script", "deezer-widget-loader"));</script>
 
 <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=<%= @user.current_song_id %>&app_id=1" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="400" data-height="90"></div>
-<p>Choose a song to play!</p>
+<p>Choose a song to play from <%= @user.name %>'s favorite songs!</p>
 <ol>
   <%= render @songs %>
 </ol>

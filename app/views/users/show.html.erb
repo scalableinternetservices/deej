@@ -11,33 +11,21 @@
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <body>
-      <ul class="tab">
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Search')">Search</a></li>
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Songs')">Songs</a></li>
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Followers')">Followers (<%= @user.followers.count %>)</a></li>
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Following')">Following (<%= @user.following.count %>)</a></li>
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Microposts')">Comments (<%= @comments.count %>)</a></li>
+      <ul class="tab" id="profileTab">
+        <li><a href="#1">Search</a></li>
+        <li><a href="#2">Songs</a></li>
+        <li><a href="#3">About</a></li>
+        <li><a href="#4">Followers (<%= @user.followers.count %>)</a></li>
+        <li><a href="#5">Following (<%= @user.following.count %>)</a></li>
+        <li><a href="#6">Comments (<%= @comments.count %>)</a></li>
       </ul>
-      <div id="Search" class="tabcontent">
-        <button id="connectDeezer" style="width:150px; border-radius:10px;background-color:#6496c8;">Connect Deezer</button>
-        <%= render 'search' %>
-      </div>
-      <div id="Songs" class="tabcontent">
-        <button id="connectDeezer" style="width:150px; border-radius:10px;background-color:#6496c8;">Connect Deezer</button>
-        <%= render 'songs' %>
-      </div>
-      <div id="About" class="tabcontent">
-        <%= render 'about' %>
-      </div>
-      <div id="Followers" class="tabcontent">
-        <%= render 'followers' %>
-      </div>
-      <div id="Following" class="tabcontent">
-        <%= render 'following' %>
-      </div>
-      <div id="Microposts" class="tabcontent">
-        <%= render 'microposts' %>
+      <div class="tab-content">
+         <div class="tab-pane" id="1"><%=render 'search'%></div>
+         <div class="tab-pane" id="2"><%=render 'songs'%></div>
+         <div class="tab-pane" id="3"><%=render 'about'%></div>
+         <div class="tab-pane" id="4"><%=render 'followers'%></div>
+         <div class="tab-pane" id="5"><%=render 'following'%></div>
+         <div class="tab-pane" id="6"><%=render 'microposts'%></div>
       </div>
     </body>
   </div>
@@ -49,4 +37,21 @@
       window.open("http://www.deezer.com/");
 
     });
+</script>
+
+<script>
+  $('#profileTab a').click(function(e) {
+  e.preventDefault();
+  $(this).tab('show');
+});
+
+// store the currently selected tab in the hash value
+$("ul.tab > li > a").on("shown.bs.tab", function(e) {
+  var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+});
+
+// on load of the page: switch to the currently selected tab
+var hash = window.location.hash;
+$('#profileTab a[href="' + hash + '"]').tab('show');
 </script>
