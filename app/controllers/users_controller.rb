@@ -42,6 +42,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_song
+    user_id = params[:uid]
+    deezer_id = params[:did]
+    @user = User.find(user_id)
+    #@user.current_song_id = deezer_id
+    @user.update_attribute(:current_song_id, deezer_id)
+  end
+
+
   def remove_song
     song_id = params[:sid]
     user_id = params[:uid]

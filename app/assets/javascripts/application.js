@@ -53,7 +53,7 @@ function addSongToUser(song_element){
 }
 
 function playSong(deezer_id){
-
+    $.get("/users/" + getUserId() + "/set_song/" + deezer_id);
 }
 
 function removeSong(song_id, user_id){

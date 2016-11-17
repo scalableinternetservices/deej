@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/users/:uid/add_song/:did/:title/:artist/:album', to: 'users#add_song'
   get '/users/:sid/:uid', to: 'users#remove_song'
+  get '/users/:uid/set_song/:did', to: 'users#set_song'
 
   resources :users
   resources :microposts,          only: [:create, :destroy]
