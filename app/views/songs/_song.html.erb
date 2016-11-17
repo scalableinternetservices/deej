@@ -1,12 +1,9 @@
 <li id="songs-<%= song.id %>">
-  <span class="title"><%= song.title %> by</span>
-  <span class="artist"><%= song.artist %></span>
-  <span class="album"><%= song.album %></span>
-
-  <% if @current_user == @user %>
-    <button class='add-button' onClick='removeSong(<%= song.id %>, <%= @user.id %>);'><span>Remove</span></button>
-    <button class='add-button' onClick='playSong(<%= song.deezer_id %>);'><span>Play</span></button>
-  <% else %>
-    <button class='add-button' onClick='playSong(<%= song.deezer_id %>);'><span>Play</span></button>
-  <% end %>
+<button class='add-button' onClick='playSong(<%= song.deezer_id %>);'><span>Play</span></button>
+<% if @current_user == @user %>
+  <button class='add-button' onClick='removeSong(<%= song.id %>, <%= @user.id %>);'><span>Remove</span></button>
+<% end %>
+<span class="title"><%= song.title %> by</span>
+<span class="artist"><%= song.artist %>,</span>
+<span class="album"><%= song.album %></span>
 </li>
