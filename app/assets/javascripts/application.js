@@ -36,7 +36,6 @@ function addSongToUser(song_element){
     var song_artist = song.attr('artist');
     var song_album = song.attr('album');
     $.get("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
-    window.location.reload(true);
 }
 
 function playSong(deezer_id){
@@ -53,4 +52,8 @@ function getUserId(){
     var path = window.location.pathname;
     var uid = path.split('/')[2];
     return uid;
+}
+
+function refresh(){
+    window.location.reload(true);
 }

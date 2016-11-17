@@ -13,7 +13,7 @@
     <body>
       <ul class="tab" id="profileTab">
         <li><a href="#Search">Search</a></li>
-        <li><a href="#Songs">Songs</a></li>
+        <li><a href="#Songs" onClick="refresh();">Songs</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Followers">Followers (<%= @user.followers.count %>)</a></li>
         <li><a href="#Following">Following (<%= @user.following.count %>)</a></li>
@@ -21,7 +21,7 @@
       </ul>
       <div class="tab-content">
          <div class="tab-pane" id="Search"><%=render 'search'%></div>
-         <div class="tab-pane" id="Songs"><%=render 'songs'%></div>
+         <div class="tab-pane" id="Songs" ><%=render 'songs'%></div>
          <div class="tab-pane" id="About"><%=render 'about'%></div>
          <div class="tab-pane" id="Followers"><%=render 'followers'%></div>
          <div class="tab-pane" id="Following"><%=render 'following'%></div>
