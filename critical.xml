@@ -62,7 +62,7 @@
         <http url='/signup' 
               version='1.1' 
               method='POST'
-              contents='user%5Bname%5D=user%%userRandInt%%%&amp;user%5Bemail%5D=user%%userRandInt%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password&amp;commit=Signup%21'>
+              contents='user%5Bname%5D=user%%userRandInt%%&amp;user%5Bemail%5D=user%%userRandInt%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password&amp;commit=Signup%21'>
         </http>
       </request>
 
