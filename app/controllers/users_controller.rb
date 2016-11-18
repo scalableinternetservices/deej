@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+    @users_ordered_followers = User.all.sort_by(&:follower_count).reverse
   end
 
   def show

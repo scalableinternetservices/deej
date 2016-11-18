@@ -1,7 +1,7 @@
 <li class="user_list">
 <section class="user_image_name_about">
 	<%= image_tag user.avatar.url(:medium), :class=>"img-circular-list" %>
-	<%= link_to user.name, user %>
+	<%= link_to user.name, user %>  <%= user.follower_count %> Followers
 	<br>
 	<p> <%= user.about %> </p>
 	<% if current_user.admin? && !current_user?(user) %>
