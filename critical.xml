@@ -37,7 +37,7 @@
 <sessions>
     <session name="http-example" probability="100" type="ts_http">
 
-      <!-- start out at the dashboard. -->
+      <!-- start out at the homepage. -->
       <request>
         <http url='/' version='1.1' method='GET'></http>
       </request>
@@ -53,7 +53,18 @@
       <!-- wait for up to 2 seconds, user is thinking -->
       <thinktime value="2" random="true"></thinktime>
 
+      <!-- sign up, as a user would do. -->
+      <request>
+        <http url='/signup' 
+              version='1.1' 
+              method='POST'
+              contents='user%5Bname%5D=user&&RandInt%%%&amp;user%5Bemail%5D=user&&RandInt%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password_confirmation&amp;commit=Create+my+account'>
+        </http>
+      </request>
 
+      <!-- wait for up to 2 seconds, user is thinking -->
+      <thinktime value="2" random="true"></thinktime>
+      
     </session>
   </sessions>
 </tsung>
