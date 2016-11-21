@@ -68,12 +68,12 @@
       </request>
       <thinktime value="2" random="true"></thinktime>
       
-      <!-- write about, as a user would do. -->
+      <!-- write about, as a user would do. 
       <request>
        <http url='/users/%%_created_user_id%%#About' version='1.1' method='GET'></http>
       </request>
       <thinktime value="2" random="true"></thinktime>
-      
+      -->
 
       
     </session>
