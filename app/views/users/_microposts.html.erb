@@ -4,8 +4,10 @@
 <% if @comments.any? %>
 <h3>Comments (<%= @comments.count %>)</h3>
 <p>Comment about this DJ!</p>
-<ol class="microposts">
-  <%= render @comments %>
-</ol>
-<%= will_paginate @comments %>
+	<% cache(cache_key_for_comments (@comments)) do %>
+	<ol class="microposts">
+	  <%= render @comments %>
+	</ol>
+	<%= will_paginate @comments %>
+	<% end %>
 <% end %>

@@ -3,8 +3,10 @@
 
 <div class="user_block">
 <%= will_paginate %>
-<ul class="users">
-  <%= render @users_ordered_followers %>
-</ul>
-<%= will_paginate %>
+	<% cache(cache_key_for_topdjs (@users_ordered_followers)) do %>
+	<ul class="users">
+ 	 <%= render @users_ordered_followers %>
+	</ul>
+	<%= will_paginate %>
+	<% end %>
 </div>
