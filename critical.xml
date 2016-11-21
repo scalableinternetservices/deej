@@ -57,7 +57,6 @@
       
       <!-- log in, as a user would do. -->
       <request>
-        <dyn_variable name="created_user_id" re="[Ll]location: http://.*users/(.*)\r"/>
         <http url='/login' 
               version='1.1' 
               method='POST'
