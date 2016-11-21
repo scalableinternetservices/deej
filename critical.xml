@@ -55,9 +55,21 @@
         <var name="rand"/>
       </setdynvars>
       
+      <!-- log in, as a user would do. -->
+      <request>
+        <dyn_variable name="created_user_id" re="[Ll]location: http://.*users/(.*)\r"/>
+        <http url='/login' 
+              version='1.1' 
+              method='POST'
+              contents='user%5Bemail%5D=nathanielchu4@gmail.com&amp;user%5Bpassword%5D=111111&amp;commit=Edit+user'>
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+      
       <!-- sign up, as a user would do. -->
       <!-- contents='user%5Bname%5D=user%%_rand%%&amp;user%5Bemail%5D=user%%_rand%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password&amp;commit=Sign+up'>
       -->
+      <!--
       <request>
         <dyn_variable name="created_user_id" re="[Ll]location: http://.*users/(.*)\r"/>
         <http url='/signup' 
@@ -67,6 +79,7 @@
         </http>
       </request>
       <thinktime value="2" random="true"></thinktime>
+      -->
       
       <!-- write about, as a user would do. 
       <request>
