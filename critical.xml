@@ -45,17 +45,18 @@
       </request>
       <thinktime value="2" random="true"></thinktime>
 
-      <!-- visit the View active DJ's page, as a user would do.  -->
+      <!-- visit the View active DJ's page, as a user would do. 
       <request>
         <http url='/users' version='1.1' method='GET'></http>
       </request>
       <thinktime value="2" random="true"></thinktime>
-
+      -->
+      
       <setdynvars sourcetype="random_number" start="1000" end="9999999">
         <var name="rand"/>
       </setdynvars>
       
-      <!-- log in, as a user would do. -->
+      <!-- log in, as a user would do.
       <request>
         <http url='/login' 
               version='1.1' 
@@ -64,6 +65,7 @@
         </http>
       </request>
       <thinktime value="2" random="true"></thinktime>
+      -->
       
       <!-- sign up, as a user would do. -->
       <!-- contents='user%5Bname%5D=user%%_rand%%&amp;user%5Bemail%5D=user%%_rand%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password&amp;commit=Sign+up'>
