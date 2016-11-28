@@ -43,14 +43,7 @@
       <request>
         <http url='/' version='1.1' method='GET'></http>
       </request>
-      <thinktime value="2" random="true"></thinktime>
-
-      <!-- visit the View active DJ's page, as a user would do. 
-      <request>
-        <http url='/users' version='1.1' method='GET'></http>
-      </request>
-      <thinktime value="2" random="true"></thinktime>
-      -->
+      <thinktime value="2" random="true"></thinktime>      
       
       <setdynvars sourcetype="random_number" start="1000" end="9999999">
         <var name="rand"/>
@@ -81,13 +74,22 @@
       </request>
       <thinktime value="2" random="true"></thinktime>
 
-      
-      <!-- write about, as a user would do. 
+      <!-- visit the View active DJ's page, as a user would do. -->
       <request>
-       <http url='/users/%%_created_user_id%%#About' version='1.1' method='GET'></http>
+        <http url='/users' version='1.1' method='GET'></http>
       </request>
       <thinktime value="2" random="true"></thinktime>
-      -->
+      
+      <!-- write about, as a user would do. -->
+      <request>
+       <http url='/users/%%_created_user_id%%#About' 
+             version='1.1' 
+             method='POST'
+             contents='user%5Babout%5D=hello&amp;commit=Update+Information'>
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+      
 
       
     </session>
