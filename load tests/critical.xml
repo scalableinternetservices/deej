@@ -68,12 +68,46 @@
       </request>
       <thinktime value="2" random="true"></thinktime>
       
-      <!-- visit about, as a user would do. -->
-      <request>
+      <!-- visit about, as a user would do and then edit it. -->
+      <request subst="true">
         <http url='/users/%%_created_user_id%%#About' version='1.1' method='GET'></http>
       </request>
       <thinktime value="2" random="true"></thinktime>
-      
+
+      <request subst="true">
+        <http url='/users/%%_created_user_id%%' version='1.1' method='PATCH' contents="user%5Babout%5D=This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.&amp;commit=Update+Information">
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- create random number for a user -->
+      <setdynvars sourcetype="random_number" start="1" end="5">
+        <var name="randuser"/>
+      </setdynvars>
+
+      <!-- Visit random user profile and then post comment and view the comments -->
+      <request subst="true">
+        <http url='/users/%%_randuser%%' version='1.1' method='GET'></http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <request subst="true">
+        <http url='/microposts' version='1.1' method='POST' contents="micropost%5Breceiver_id%5D=%%_randuser%%&amp;micropost%5Bcontent%5D=This+is+a+comment+on+a+random+user+profile+page.&amp;commit=Post">
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <request subst="true">
+        <http url='/users/%%_randuser%%#Microposts' version='1.1' method='GET'></http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- Follow random user -->
+      <request subst="true">
+       <http url="/relationships" version="1.1" method="POST" contents="followed_id%5D=%%_randuser%%"/>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
     </session>
   </sessions>
 </tsung>

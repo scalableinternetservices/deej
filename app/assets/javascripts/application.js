@@ -35,16 +35,16 @@ function addSongToUser(song_element){
     var song_title = song.attr('title');
     var song_artist = song.attr('artist');
     var song_album = song.attr('album');
-    $.get("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
+    $.post("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
 }
 
 function playSong(deezer_id){
-    $.get("/users/" + getUserId() + "/set_song/" + deezer_id);
+    $.post("/users/" + getUserId() + "/set_song/" + deezer_id);
     window.location.reload(true);
 }
 
 function removeSong(song_id, user_id){
-    $.get("/users/" + song_id + "/remove_song/" + user_id);
+    $.post("/users/" + song_id + "/remove_song/" + user_id);
     window.location.reload(true);
 }
 

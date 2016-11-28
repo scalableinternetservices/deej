@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
@@ -6,7 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
-    @users_ordered_followers = User.all.sort_by(&:follower_count).reverse
+    @users_ordered_followers = User.all.sort_by(&:follower_count).reverse.paginate(page: params[:page])
   end
 
   def show
