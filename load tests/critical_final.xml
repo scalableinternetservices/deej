@@ -9,13 +9,13 @@
 
   <!-- Server side setup -->
   <servers>
-    <server host="ec2-35-164-165-117.us-west-2.compute.amazonaws.com" port="80" type="tcp"></server>
+    <server host="ec2-35-164-193-175.us-west-2.compute.amazonaws.com" port="80" type="tcp"></server>
   </servers>
 
   <load>
     <arrivalphase phase="1" duration="5" unit="second">
       <users arrivalrate="1" unit="second"></users>     
-    </arrivalphase>
+    </arrivalphase> 
     <arrivalphase phase="2" duration="30" unit="second">
       <users arrivalrate="2" unit="second"></users>
     </arrivalphase>
@@ -54,7 +54,8 @@
       
       <!-- sign up a random user -->
       <request subst="true">
-        <http url='/signup' 
+        <dyn_variable name="created_user_id" re="[Ll]ocation: http://.*/users/(.*)\r"/>
+	<http url='/signup' 
               version='1.1' 
               method='POST'
               contents="user%5Bname%5D=user%%_rand%%&amp;user%5Bemail%5D=user%%_rand%%%40gmail.com&amp;user%5Bpassword%5D=password&amp;user%5Bpassword_confirmation%5D=password&amp;commit=Create+my+account">
@@ -76,6 +77,29 @@
 
       <request subst="true">
         <http url='/users/%%_created_user_id%%' version='1.1' method='PATCH' contents="user%5Babout%5D=This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.+This+is+my+about+page+and+I+am+writing+to+it+right+now.&amp;commit=Update+Information">
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+      
+      <!-- upload image -->
+      <setdynvars sourcetype="eval"
+            code='fun({Pid,DynVars})-> [[13, 10]] end.'>
+        <var name="nl" />
+      </setdynvars>
+
+      <setdynvars sourcetype="eval"
+            code='fun({Pid,DynVars})->
+                    {ok, Bin} = file:read_file("Rubberduck.png"),
+                    Bin
+                  end.'>
+        <var name="attached_file" />
+      </setdynvars>
+
+      <request subst="true">
+        <http
+            url='/users/%%_created_user_id%%' version='1.1' method='PATCH'
+            content_type='multipart/form-data; boundary=----FormBoundary'
+            contents='------FormBoundary%%_nl%%Content-Disposition: form-data; name="user[avatar]"; filename="rubberduck.png"%%_nl%%Content-Type: image/png%%_nl%%%%_nl%%%%_attached_file%%%%_nl%%------FormBoundary%%_nl%%Content-Disposition: form-data; name="commit"%%_nl%%%%_nl%%Save changes%%_nl%%------FormBoundary--%%_nl%%%%_nl%%'>
         </http>
       </request>
       <thinktime value="2" random="true"></thinktime>
@@ -112,6 +136,20 @@
       <!-- add song to user playlist -->
       <request subst="true">
         <http url='/users/%%_created_user_id%%/add_song/110265034/Hello/Adele/Hello' version='1.1' method='POST'>
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- add song to user playlist -->
+      <request subst="true">
+        <http url='/users/%%_created_user_id%%/add_song/124659380/Controlla/Drake/Views' version='1.1' method='POST'>
+        </http>
+      </request>
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- remove song from user playlist -->
+      <request subst="true">
+        <http url='/users/1/remove_song/1' version='1.1' method='POST'>
         </http>
       </request>
       <thinktime value="2" random="true"></thinktime>
