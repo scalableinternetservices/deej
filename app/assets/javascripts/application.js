@@ -25,19 +25,16 @@ function listSongs(data) {
         var title = data.data[i].title;
         var artist = data.data[i].artist.name;
         var album = data.data[i].album.title;
-        var titleF = title.replace(/ /g,"_");
-        var artistF = artist.replace(/ /g,"_");
-        var albumF = album.replace(/ /g,"_");
-        $('#songs').append("<tr deezer_id=" + deezer_id + " titleF=" + titleF +" artistF=" + artistF + " albumF=" + albumF + "><td>" + title + "</td><td>" + artist + "</td><td>" + album + "</td><td><button class='add-button' onClick='addSongToUser(this);'><span>Add</span></button></td></tr>");
+        $('#songs').append("<tr deezer_id=" + deezer_id + " title=" + title + " artist=" + artist + " album=" + album +"><td>" + title + "</td><td>" + artist + "</td><td>" + album + "</td><td><button class='add-button' onClick='addSongToUser(this);'><span>Add</span></button></td></tr>");
     }
 }
 
 function addSongToUser(song_element){
-    var song = $(song_element).parent().parent();
+    var song = $(song_element).parent().parent()
     var song_did = song.attr('deezer_id');
-    var song_title = song.attr('titleF');
-    var song_artist = song.attr('artistF');
-    var song_album = song.attr('albumF');
+    var song_title = song.attr('title');
+    var song_artist = song.attr('artist');
+    var song_album = song.attr('album');
     $.post("/users/" + getUserId() + "/add_song/" + song_did + "/" + song_title + "/" + song_artist + "/" + song_album);
 }
 

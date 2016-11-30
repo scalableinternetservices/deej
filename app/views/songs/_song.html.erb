@@ -3,7 +3,7 @@
 <% if @current_user == @user %>
   <button class='add-button' onClick='removeSong(<%= song.id %>, <%= @user.id %>);'><span>Remove</span></button>
 <% end %>
-<span class="title"><%= song.title.tr('_', ' ') %> by</span>
-<span class="artist"><%= song.artist.tr('_', ' ') %>,</span>
-<span class="album"><%= song.album.tr('_', ' ') %></span>
+<span class="title"><%= song.title %> by</span>
+<span class="artist"><%= song.artist %>,</span>
+<span class="album"><%= song.album %></span>
 </li>
