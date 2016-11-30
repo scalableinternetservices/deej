@@ -7,17 +7,17 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
-    @users_ordered_followers = User.all.sort_by(&:follower_count).reverse.paginate(page: params[:page])
+    @users_ordered_followers = User.all.sort_by(&:follower_count).reverse.paginate(page: params[:page]) if stale?(User.all)
   end
 
   def show
     @user = User.find(params[:id])
-    @following = @user.following.paginate(page: params[:page])
-    @followers = @user.followers.paginate(page: params[:page])
+    @following = @user.following.paginate(page: params[:page]) if stale?(@user.following.all)
+    @followers = @user.followers.paginate(page: params[:page]) if stale?(@user.followers.all)
     @micropost  = current_user.microposts.build
-    @comments = @user.comments.paginate(page: params[:page])
+    @comments = @user.comments.paginate(page: params[:page]) if stale?(@user.microposts.all)
     ids = @user.song_ids
-    @songs = @user.display_songs(ids)
+    @songs = @user.display_songs(ids) if stale?(@user.songs.all)
   end
 
   def new
