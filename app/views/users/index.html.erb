@@ -10,3 +10,8 @@
 	<%= will_paginate %>
 	<% end %>
 </div>
+<ul class="users">
+  <%= render @users_ordered_followers %>
+</ul>
+<%= will_paginate @users_ordered_followers %>
+</div>
