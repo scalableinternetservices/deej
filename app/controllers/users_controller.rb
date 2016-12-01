@@ -42,6 +42,7 @@ class UsersController < ApplicationController
       @user.songs << @song
       print "Song created and added to user's songs"
     end
+    flash[:success] = "Added Song(s) Successfully!"
   end
 
   def set_song
