@@ -32,9 +32,13 @@ class UsersController < ApplicationController
     album_name = params[:album]   
     @user = User.find(user_id)
     if (@song = Song.find_by(deezer_id: deezer_id))
-      print "Found song"
-      @user.songs << @song
-      print "Found song and added user song relation"
+      if (@user.songs.any?{|a| a.deezer_id.to_s == deezer_id})
+        print "DUPLICATE\n"
+      else
+        print "Found song"
+        @user.songs << @song
+        print "Found song and added user song relation"
+      end
     else
       print "No song found"
       @song = Song.create(title: title, artist: artist_name, album: album_name, deezer_id: deezer_id)
