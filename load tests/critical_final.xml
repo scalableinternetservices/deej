@@ -210,9 +210,9 @@
       </request>
       <thinktime value="2" random="true"></thinktime>
 
-      <!-- add song to user playlist -->
+      <!-- play song from user playlist -->
       <request subst="true">
-        <http url='/users/%%_created_user_id%%/add_song/124659380/Controlla/Drake/Views' version='1.1' method='POST'>
+        <http url='/users/%%_created_user_id%%/set_song/110265034' version='1.1' method='POST'>
         </http>
       </request>
       <thinktime value="2" random="true"></thinktime>
